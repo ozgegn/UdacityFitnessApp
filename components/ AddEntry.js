@@ -6,6 +6,7 @@ import UdaciSteppers from "./UdaciSteppers";
 import DataHeader from "./DataHeader";
 import { Ionicons } from "@expo/vector-icons";
 import TextButton from "./TextButton";
+import { submitEntry, removeEntry } from '../utils/api'
 
 function SubmitBtn({ onPress }) {
   return (
@@ -71,6 +72,8 @@ export default class AddEntry extends Component {
 
     //Save to DB
 
+    submitEntry({entry, key})
+
     //Clear Local Notification
   };
 
@@ -79,12 +82,14 @@ export default class AddEntry extends Component {
     //Update redux
     //Navigate To Home
     //Save to db
+
+    removeEntry(key)
   };
 
   render() {
     const metaInfo = getMetricMetaInfo();
 
-    if (true) {
+    if (false) {
       return (
         <View>
           <Ionicons name={"ios-happy"} size={100} />
